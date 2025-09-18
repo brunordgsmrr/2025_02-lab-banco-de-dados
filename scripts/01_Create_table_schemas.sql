@@ -1,11 +1,11 @@
--- Cria tabela: Municípios - OK
--- Cria tabela: Condições climaticas - OK
--- Cria tabela: Concessionarias - OK
--- Cria tabela: Rodovias - OK
--- Cria tabela: Tipos acidentes - OK
--- Cria tabela: Acidentes - OK
--- Cria tabela: Tipos veiculos - OK
--- Cria tabela: Veiculos envolvidos - OK
+-- CRIA TABELA: MUNICÍPIOS - OK
+-- CRIA TABELA: CONDIÇÕES CLIMATICAS - OK
+-- CRIA TABELA: CONCESSIONARIAS - OK
+-- CRIA TABELA: RODOVIAS - OK
+-- CRIA TABELA: TIPOS ACIDENTES - OK
+-- CRIA TABELA: ACIDENTES - OK
+-- CRIA TABELA: TIPOS VEICULOS - OK
+-- CRIA TABELA: VEICULOS ENVOLVIDOS - OK
 
 -- DROP TABLE VEICULOS_ENVOLVIDOS;
 -- DROP TABLE ACIDENTES;
@@ -17,82 +17,82 @@
 -- DROP TABLE MUNICIPIOS;
 
 CREATE TABLE MUNICIPIOS (
-    mun_id NUMBER (38), 
-    mun_municipio VARCHAR(100),
-    mun_reg_der VARCHAR(100),
-    mun_reg_adm VARCHAR(100),
-    PRIMARY KEY (mun_id)
+    MUN_ID NUMBER (38), 
+    MUN_MUNICIPIO VARCHAR(100),
+    MUN_REG_DER VARCHAR(100),
+    MUN_REG_ADM VARCHAR(100),
+    PRIMARY KEY (MUN_ID)
 );
 
 CREATE TABLE CONDICOES_CLIMATICAS (
-    ccm_id NUMBER (38), 
-    ccm_meteoro VARCHAR(100),
-    ccm_visib VARCHAR(100),
-    PRIMARY KEY (ccm_id)
+    CCM_ID NUMBER (38), 
+    CCM_METEORO VARCHAR(100),
+    CCM_VISIB VARCHAR(100),
+    PRIMARY KEY (CCM_ID)
 );
 
 CREATE TABLE CONCESSIONARIAS (
-    con_id NUMBER (38), 
-    con_concessionaria VARCHAR(100),
-    PRIMARY KEY (con_id)
+    CON_ID NUMBER (38), 
+    CON_CONCESSIONARIA VARCHAR(100),
+    PRIMARY KEY (CON_ID)
 );
 
 CREATE TABLE RODOVIAS (
-    rod_id NUMBER (38), 
-    rod_rodovias VARCHAR(100),
-    rod_denominacao VARCHAR(100),
-    rod_jurisdicao VARCHAR(100),
-    rod_con_id VARCHAR(100),
-    PRIMARY KEY(rod_id),
-    FOREIGN KEY(rod_con_id) REFERENCES CONCESSIONARIAS(id)
+    ROD_ID NUMBER (38), 
+    ROD_RODOVIAS VARCHAR(100),
+    ROD_DENOMINACAO VARCHAR(100),
+    ROD_JURISDICAO VARCHAR(100),
+    ROD_CON_ID VARCHAR(100),
+    PRIMARY KEY(ROD_ID),
+    FOREIGN KEY(ROD_CON_ID) REFERENCES CONCESSIONARIAS(ID)
 );
 
 CREATE TABLE TIPOS_ACIDENTES (
-    tac_id NUMBER (38), 
-    tac_class_acid VARCHAR(100),
-    tac_tipo_acid VARCHAR(100),
-    PRIMARY KEY(tac_id)
+    TAC_ID NUMBER (38), 
+    TAC_CLASS_ACID VARCHAR(100),
+    TAC_TIPO_ACID VARCHAR(100),
+    PRIMARY KEY(TAC_ID)
 );
 
 CREATE TABLE TIPOS_VEICULOS (
-    tvc_id NUMBER (38), 
-    tvc_veiculo VARCHAR(100),
-    PRIMARY KEY(tvc_id)
+    TVC_ID NUMBER (38), 
+    TVC_VEICULO VARCHAR(100),
+    PRIMARY KEY(TVC_ID)
 );
 
 CREATE TABLE ACIDENTES (
-    acd_id NUMBER(38),
-    acd_marco_qm NUMBER(38),
-    acd_sentido VARCHAR(100),
-    acd_dthr_oc DATE,
-    acd_ano NUMBER(38),
-    acd_mes NUMBER(38),
-    acd_ilesa_int NUMBER(38),
-    acd_vit_fatal_int NUMBER(38),
-    acd_vit_grave_int NUMBER(38),
-    acd_vit_leve_int NUMBER(38),
-    acd_vit_moderada_int NUMBER(38),
-    acd_vit_seminfo_int NUMBER(38),
-    acd_tipo_vista VARCHAR(100),
-    acd_lat_final NUMBER(38),
-    acd_lon_final NUMBER(38),
-    acd_rod_id NUMBER(38),
-    acd_tac_id NUMBER(38),
-    acd_ccm_id NUMBER(38),
-    acd_mun_id NUMBER(38),
-    PRIMARY KEY(acd_id),
-    FOREIGN KEY(acd_rod_id) REFERENCES CONCESSIONARIAS(id),
-    FOREIGN KEY(acd_tac_id) REFERENCES TIPOS_ACIDENTES(id),
-    FOREIGN KEY(acd_ccm_id) REFERENCES CONDICOES_CLIMATICAS(id),
-    FOREIGN KEY(acd_mun_id) REFERENCES MUNICIPIOS(id)
+    ACD_ID NUMBER(38),
+    ACD_MARCO_QM NUMBER(38),
+    ACD_SENTIDO VARCHAR(100),
+    ACD_DTHR_OC DATE,
+    ACD_ANO NUMBER(38),
+    ACD_MES NUMBER(38),
+    ACD_ILESA_INT NUMBER(38),
+    ACD_VIT_FATAL_INT NUMBER(38),
+    ACD_VIT_GRAVE_INT NUMBER(38),
+    ACD_VIT_LEVE_INT NUMBER(38),
+    ACD_VIT_MODERADA_INT NUMBER(38),
+    ACD_VIT_SEMINFO_INT NUMBER(38),
+    ACD_TIPO_VISTA VARCHAR(100),
+    ACD_LAT_FINAL NUMBER(38),
+    ACD_LON_FINAL NUMBER(38),
+    ACD_ROD_ID NUMBER(38),
+    ACD_TAC_ID NUMBER(38),
+    ACD_CCM_ID NUMBER(38),
+    ACD_MUN_ID NUMBER(38),
+    PRIMARY KEY(ACD_ID),
+    FOREIGN KEY(ACD_ROD_ID) REFERENCES CONCESSIONARIAS(ID),
+    FOREIGN KEY(ACD_TAC_ID) REFERENCES TIPOS_ACIDENTES(ID),
+    FOREIGN KEY(ACD_CCM_ID) REFERENCES CONDICOES_CLIMATICAS(ID),
+    FOREIGN KEY(ACD_MUN_ID) REFERENCES MUNICIPIOS(ID)
 );
 
 CREATE TABLE VEICULOS_ENVOLVIDOS (
-    ven_id NUMBER(38),
-    ven_qtd NUMBER(38),
-    ven_acd_id NUMBER(38),
-    ven_tvc_id NUMBER(38),    
-    PRIMARY KEY(ven_id),
-    FOREIGN KEY(ven_acd_id) REFERENCES CONCESSIONARIAS(id),
-    FOREIGN KEY(ven_tvc_id) REFERENCES TIPOS_ACIDENTES(id)
+    VEN_ID NUMBER(38),
+    VEN_QTD NUMBER(38),
+    VEN_ACD_ID NUMBER(38),
+    VEN_TVC_ID NUMBER(38),    
+    PRIMARY KEY(VEN_ID),
+    FOREIGN KEY(VEN_ACD_ID) REFERENCES CONCESSIONARIAS(ID),
+    FOREIGN KEY(VEN_TVC_ID) REFERENCES TIPOS_ACIDENTES(ID)
 );

@@ -8,67 +8,67 @@
 -- DROP TABLE H_MUNICIPIOS;
 
 CREATE TABLE H_MUNICIPIOS (
-    old_mun_id NUMBER (38), 
-    old_mun_municipio VARCHAR(100),
-    old_mun_reg_der VARCHAR(100),
-    old_mun_reg_adm VARCHAR(100)
+    OLD_MUN_ID NUMBER (38), 
+    OLD_MUN_MUNICIPIO VARCHAR(100),
+    OLD_MUN_REG_DER VARCHAR(100),
+    OLD_MUN_REG_ADM VARCHAR(100)
 );
 
 CREATE TABLE H_CONDICOES_CLIMATICAS (
-    old_ccm_id NUMBER (38), 
-    old_ccm_meteoro VARCHAR(100),
-    old_ccm_visib VARCHAR(100)
+    OLD_CCM_ID NUMBER (38), 
+    OLD_CCM_METEORO VARCHAR(100),
+    OLD_CCM_VISIB VARCHAR(100)
 );
 
 CREATE TABLE H_CONCESSIONARIAS (
-    old_con_id NUMBER (38), 
-    old_con_concessionaria VARCHAR(100)
+    OLD_CON_ID NUMBER (38), 
+    OLD_CON_CONCESSIONARIA VARCHAR(100)
 );
 
 CREATE TABLE H_RODOVIAS (
-    old_rod_id NUMBER (38), 
-    old_rod_rodovias VARCHAR(100),
-    old_rod_denominacao VARCHAR(100),
-    old_rod_jurisdicao VARCHAR(100),
-    old_rod_con_id VARCHAR(100)
+    OLD_ROD_ID NUMBER (38), 
+    OLD_ROD_RODOVIAS VARCHAR(100),
+    OLD_ROD_DENOMINACAO VARCHAR(100),
+    OLD_ROD_JURISDICAO VARCHAR(100),
+    OLD_ROD_CON_ID VARCHAR(100)
 );
 
 CREATE TABLE H_TIPOS_ACIDENTES (
-    old_tac_id NUMBER (38), 
-    old_tac_class_acid VARCHAR(100),
-    old_tac_tipo_acid VARCHAR(100)
+    OLD_TAC_ID NUMBER (38), 
+    OLD_TAC_CLASS_ACID VARCHAR(100),
+    OLD_TAC_TIPO_ACID VARCHAR(100)
 );
 
 CREATE TABLE H_TIPOS_VEICULOS (
-    old_tvc_id NUMBER (38), 
-    old_tvc_veiculo VARCHAR(100)
+    OLD_TVC_ID NUMBER (38), 
+    OLD_TVC_VEICULO VARCHAR(100)
 );
 
 CREATE TABLE H_ACIDENTES (
-    old_acd_id NUMBER(38),
-    old_acd_marco_qm NUMBER(38),
-    old_acd_sentido VARCHAR(100),
-    old_acd_dthr_oc DATE,
-    old_acd_ano NUMBER(38),
-    old_acd_mes NUMBER(38),
-    old_acd_ilesa_int NUMBER(38),
-    old_acd_vit_fatal_int NUMBER(38),
-    old_acd_vit_grave_int NUMBER(38),
-    old_acd_vit_leve_int NUMBER(38),
-    old_acd_vit_moderada_int NUMBER(38),
-    old_acd_vit_seminfo_int NUMBER(38),
-    old_acd_tipo_vista VARCHAR(100),
-    old_acd_lat_final NUMBER(38),
-    old_acd_lon_final NUMBER(38),
-    old_acd_rod_id NUMBER(38),
-    old_acd_tac_id NUMBER(38),
-    old_acd_ccm_id NUMBER(38),
-    old_acd_mun_id NUMBER(38)
+    OLD_ACD_ID NUMBER(38),
+    OLD_ACD_MARCO_QM NUMBER(38),
+    OLD_ACD_SENTIDO VARCHAR(100),
+    OLD_ACD_DTHR_OC DATE,
+    OLD_ACD_ANO NUMBER(38),
+    OLD_ACD_MES NUMBER(38),
+    OLD_ACD_ILESA_INT NUMBER(38),
+    OLD_ACD_VIT_FATAL_INT NUMBER(38),
+    OLD_ACD_VIT_GRAVE_INT NUMBER(38),
+    OLD_ACD_VIT_LEVE_INT NUMBER(38),
+    OLD_ACD_VIT_MODERADA_INT NUMBER(38),
+    OLD_ACD_VIT_SEMINFO_INT NUMBER(38),
+    OLD_ACD_TIPO_VISTA VARCHAR(100),
+    OLD_ACD_LAT_FINAL NUMBER(38),
+    OLD_ACD_LON_FINAL NUMBER(38),
+    OLD_ACD_ROD_ID NUMBER(38),
+    OLD_ACD_TAC_ID NUMBER(38),
+    OLD_ACD_CCM_ID NUMBER(38),
+    OLD_ACD_MUN_ID NUMBER(38)
 );
 
 CREATE TABLE H_VEICULOS_ENVOLVIDOS (
-    old_ven_id NUMBER(38),
-    old_ven_qtd NUMBER(38),
-    old_ven_acd_id NUMBER(38),
-    old_ven_tvc_id NUMBER(38)
+    OLD_VEN_ID NUMBER(38),
+    OLD_VEN_QTD NUMBER(38),
+    OLD_VEN_ACD_ID NUMBER(38),
+    OLD_VEN_TVC_ID NUMBER(38)
 );
