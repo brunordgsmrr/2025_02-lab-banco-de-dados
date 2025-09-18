@@ -1,0 +1,27 @@
+Coluna;Tipo;Descrição
+NOME_CONC;texto;Nome da concessionária responsável pelo trecho da rodovia
+RODOVIA;texto;Código da rodovia (ex.: SP340)
+MARCO_QM;numérico;Quilômetro do marco onde ocorreu o acidente
+SENTIDO;texto;Sentido da via (NORTE, SUL, LESTE, OESTE)
+DTHR_OC;texto;Data e hora do acidente
+CLASS_ACID;texto;Classificação geral do acidente (ex.: colisão traseira, atropelamento)
+TIPO_ACID;texto;Tipo detalhado do acidente
+METEORO;texto;Condições meteorológicas no momento
+VISIB;texto;Condição de visibilidade
+VEÍC;texto;Tipo(s) de veículos envolvidos (automóvel, moto, caminhão, etc.)
+ANO;inteiro;Ano do acidente
+MÊS;inteiro;Mês do acidente
+ILESA_INT;inteiro;Quantidade de vítimas ilesas
+VIT_FATAL_INT;inteiro;Quantidade de vítimas fatais
+VIT_GRAVE_INT;inteiro;Quantidade de vítimas com ferimentos graves
+VIT_LEVE_INT;inteiro;Quantidade de vítimas com ferimentos leves
+VIT_MODERADA_INT;inteiro;Quantidade de vítimas moderadas internadas
+VIT_SEMINFO_INT;inteiro;Quantidade de vítimas sem informação de internação
+TIPO_PISTA;texto;Tipo da pista (ex.: EIXO, LOCAL, EXPRESSA)
+DENOMINACAO;texto;Denominação oficial da rodovia
+MUNICÍPIO;texto;Município onde ocorreu o acidente
+REGIONAL_DER;texto;Regional do DER responsável
+JURISDICAO;texto;Esfera da jurisdição (estadual, federal, etc.)
+REG_ADM_SP;texto;Região administrativa do estado de São Paulo
+LAT_FINAL;numérico;Latitude aproximada do local do acidente
+LON_FINAL;numérico;Longitude aproximada do local do acidente
