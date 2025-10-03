@@ -1,4 +1,8 @@
--- SEQUENCES
+-------------------------------------------------------------------------------
+--  SEQUENCES                                                                --
+--  CRIA AS SEQUENCES DE IDS PARA OS REGISTROS                               --
+-------------------------------------------------------------------------------
+
 CREATE SEQUENCE SEQ_DADOS_ID NOCACHE;
 CREATE SEQUENCE SEQ_MUNICIPIOS_ID NOCACHE;
 CREATE SEQUENCE SEQ_CONCESSIONARIAS_ID NOCACHE;
@@ -8,8 +12,6 @@ CREATE SEQUENCE SEQ_TIPOS_ACIDENTES_ID NOCACHE;
 CREATE SEQUENCE SEQ_TIPOS_VEICULOS_ID NOCACHE;
 CREATE SEQUENCE SEQ_ACIDENTES_ID NOCACHE;
 CREATE SEQUENCE SEQ_VEICULOS_ENVOLVIDOS_ID NOCACHE;
-
-
 
 -- SEQUENCES
 -- ALTER SEQUENCE SEQ_DADOS_ID RESTART;

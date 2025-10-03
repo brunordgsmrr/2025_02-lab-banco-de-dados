@@ -1,3 +1,10 @@
+--------------------------------------------------------------------------------
+--                                                                            --
+--  HISTORIAMENTO                                                             --
+--                                                                            --
+--  SCRIPTS PARA CRIAR AS ENTIDADES DE HISTORIAMENTO                          --
+--                                                                            --
+--------------------------------------------------------------------------------
 CREATE TABLE H_MUNICIPIOS (
     OLD_MUN_ID NUMBER (38),
     OLD_MUN_MUNICIPIO VARCHAR(100),
