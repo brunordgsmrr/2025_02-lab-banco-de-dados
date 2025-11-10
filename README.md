@@ -1,5 +1,11 @@
 # 2025_02-lab-banco-de-dados
 
+## Senha
+
+| user   | senha |
+| ------ | ----- |
+| system | 12345 |
+
 ## Precesso de importação de dados
 
 ### Configuração do banco de dados e usuário
