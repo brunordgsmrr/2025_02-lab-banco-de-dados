@@ -4,14 +4,14 @@
 ✅ 1B - Confecção do dicionário de dados
 ✅ 1C - Criação de Sequences e Triggers
 ✅ 1D - Povoamento de base de dados
-❌ 1E - Consultas estratégicas
+✅ 1E - Consultas estratégicas
 
 ## Entrega 2
 
 ✅ 2A - Tabelas de histórico
 ✅ 2B - Triggers de historiamento
 ✅ 2C - Historiamento da carga 1 e cargas 2 e 3
-❌ 2D - Consultas estratégicas
+✅ 2D - Consultas estratégicas
 
 ## Entrega 3
 
@@ -25,8 +25,8 @@
 
 ✅ 4A - Criação do usuário para Data Warehouse
 ❌ 4B - Criação de Views Dinâmicas
-❌ 4C - Criação de Views Materalizadas
-❌ 4D - Consultas estratégicas
+✅ 4C - Criação de Views Materalizadas
+✅ 4D - Consultas estratégicas
 
 ## Entrega 5
 
