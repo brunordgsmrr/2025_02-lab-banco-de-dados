@@ -1,0 +1,65 @@
+SELECT 
+    METEOROLOGIA,
+    VISIBILIDADE,
+    ACD_ANO,
+    ACD_MES,
+    SUM(ACD_ILESA_INT) AS VITIMAS_ILESAS,
+    SUM(ACD_VIT_FATAL_INT) AS VITIMAS_FATAIS,
+    SUM(ACD_VIT_GRAVE_INT) AS VITIMAS_GRAVES,
+    SUM(ACD_VIT_LEVE_INT) AS VITIMAS_LEVES,
+    SUM(ACD_VIT_MODERADA_INT) AS VITIMAS_MODERADAS,
+    SUM(ACD_VIT_SEMINFO_INT) AS VITIMAS_SEM_INFO,
+    COUNT(ACD_ID) AS TOTAL_ACIDENTES
+FROM (SELECT
+        CASE
+            WHEN C.CCM_METEORO IN ('SEM INFO/NULO/0', 'NÃO INFORMADA')
+            THEN 'SEM INFORMAÇÃO'
+            ELSE C.CCM_METEORO
+        END AS METEOROLOGIA,
+    
+        -- Padroniza a coluna CCM_VISIB
+        CASE
+            WHEN C.CCM_VISIB IN ('NÃO DEFINIDO', 'SEM INFO/NULO/0', 'NÃO INFORMADA')
+            THEN 'SEM INFORMAÇÃO'
+            ELSE C.CCM_VISIB
+        END AS VISIBILIDADE,
+        A.ACD_ID,
+        A.ACD_ANO,
+        A.ACD_MES,
+        A.ACD_ILESA_INT,
+        A.ACD_VIT_FATAL_INT,
+        A.ACD_VIT_GRAVE_INT,
+        A.ACD_VIT_LEVE_INT,
+        A.ACD_VIT_MODERADA_INT,
+        A.ACD_VIT_SEMINFO_INT,
+        A.ACD_CCM_ID
+    FROM (SELECT
+            ACD_ID,
+            ACD_ANO,
+            ACD_MES,
+            ACD_ILESA_INT,
+            ACD_VIT_FATAL_INT,
+            ACD_VIT_GRAVE_INT,
+            ACD_VIT_LEVE_INT,
+            ACD_VIT_MODERADA_INT,
+            ACD_VIT_SEMINFO_INT,
+            ACD_CCM_ID
+        FROM APP.ACIDENTES
+        
+        UNION ALL
+        
+        SELECT
+            H_ACD_ID,
+            H_ACD_ANO,
+            H_ACD_MES,
+            H_ACD_ILESA_INT,
+            H_ACD_VIT_FATAL_INT,
+            H_ACD_VIT_GRAVE_INT,
+            H_ACD_VIT_LEVE_INT,
+            H_ACD_VIT_MODERADA_INT,
+            H_ACD_VIT_SEMINFO_INT,
+            H_ACD_CCM_ID
+        FROM APP.H_ACIDENTES) A
+    JOIN APP.CONDICOES_CLIMATICAS C ON A.ACD_CCM_ID = C.CCM_ID)
+GROUP BY METEOROLOGIA, VISIBILIDADE, ACD_ANO, ACD_MES;
+

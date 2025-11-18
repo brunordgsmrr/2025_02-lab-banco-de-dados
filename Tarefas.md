@@ -24,7 +24,7 @@
 ## Entrega 4
 
 ✅ 4A - Criação do usuário para Data Warehouse
-❌ 4B - Criação de Views Dinâmicas
+✅ 4B - Criação de Views Dinâmicas
 ✅ 4C - Criação de Views Materalizadas
 ✅ 4D - Consultas estratégicas
 
